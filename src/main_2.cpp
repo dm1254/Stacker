@@ -90,8 +90,6 @@ void setup(){
 //======= Functions =======
 void (* resetFunc) (void) = 0;
 
-//David Moreno: Function to invert the Rows and Columns to desired output. Utlilizes the setPoint() function
-//from the MD_MAX72XX library to change state
 void setPoint(int row, int col, bool state) {
   // Native: 8 rows, 16 cols (0-7 first/bottom module, 8-15 second/top module)
   // Desired: 16 rows (0 top of second module, 15 bottom of first module), 8 cols (0 left, 7 right)
@@ -107,7 +105,6 @@ void setPoint(int row, int col, bool state) {
   mx.setPoint(origRow, origCol, state);
 }
 
-//Mohammad Salamah LED functionality
 void blinkRed(){
   unsigned long currentTime = millis();
   if(currentTime - previousLEDTime >= blinkPeriod){
@@ -133,7 +130,6 @@ void blinkBlue(){
   }
 }
 
-// David Moreno
 void gameStateMusicAndLED(){
   // Current time in milliseconds 
   unsigned long currentTime = millis();
@@ -199,7 +195,6 @@ void gameStateMusicAndLED(){
   }
 }
 
-// Victor Avendano 
 void checkButton() {
   unsigned long currentTime = millis();
   // See if enough time has passes since last button check
